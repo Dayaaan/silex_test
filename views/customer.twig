@@ -1,0 +1,47 @@
+{{ include('header.twig') }}
+    <h1>Flickr in Silex :-)</h1>
+
+        <form class="generic-form" method="GET">
+        <fieldset>
+            <legend>Recherche de clients</legend>
+            <ul>
+                <li>
+                    <label for="country">Pays :</label>
+                    <input id="country" name="country" type="text">
+                </li>
+                <li>
+                    <button class="button button-primary" type="submit">Rechercher</button>
+                </li>
+            </ul>
+        </fieldset>
+    </form>
+    <table class="generic-table">
+         <tr>
+            <th>Société</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>adresse</th>
+            <th>ville</th>
+          </tr>
+           {% for customer in customers %}
+           <tr>
+                <td>{{ customer.customerName }}</td>
+                <td>{{ customer.contactFirstName }}</td>
+                <td>{{ customer.contactLastName }}</td>
+                <td>{{ customer.addressLine1 }}</td>
+                <td>{{ customer.city }}</td>
+           </tr>
+           {% endfor %}
+          <tr>
+    </table>
+
+    
+        <footer>
+        <hr>
+        <ul class="link-list">
+                        <li><a class="button button-primary" href="{{ path('home') }}">Accueil</a></li>
+        </ul>
+    </footer>
+
+    </body>
+</html>

@@ -1,0 +1,40 @@
+{{ include('header.twig') }}
+
+
+<h1>Flickr in Silex2 :-)</h1>
+<form class="generic-form" action="" method="GET">
+        <fieldset>
+            <legend>Recherche Flickr</legend>
+            <ul>
+                <li>
+                    <label for="tagList" title="Séparés par des virgules">Tags :</label>
+                    <input id="tagList" name="tagList" type="text">
+                </li>
+                <li>
+                    <button class="button button-primary" type="submit">Rechercher</button>
+                </li>
+            </ul>
+        </fieldset>
+    </form>
+    <hr>
+
+    <ul class="link-list photos">
+    {% for photo in photos %}
+        <li>
+            <a href="{{ photo.getThumbnailUrl(photo.getUrl()) }}" data-lightbox="flickr" data-title="Chuo">
+            <img src="{{ photo.getSmallUrl() }}"/></a>
+        </li>
+    {% endfor %}
+    </ul>
+
+     <footer>
+        <hr>
+        <ul class="link-list">
+                        <li><a class="button button-primary" href="{{ path('home') }}">Accueil</a></li>
+        </ul>
+    </footer>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="/dev/silex/web/vendor/lightbox/js/lightbox.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{{ include('header.twig') }}
+
+
+    <h1>Flickr in Silex2 :-)</h1>
+
+        <main>
+        <p>Bienvenu(e) {{ name }} !</p>
+
+        <ul>
+            <li>banane est de couleur jaune</li>
+            <li>abricot est de couleur orange</li>
+            <li>fraise est de couleur rouge</li>
+        </ul>
+    </main>
+
+        <footer>
+        <ul class="link-list">
+                        <li><a class="button button-primary" href="{{ path('hello') }}">Hello World</a></li>
+
+                        <li><a class="button button-primary" href="{{ path('customer') }}">Clients</a></li>
+
+                        <li><a class="button button-primary" href="{{ path('bonjour') }}/isabelle">Dire Bonjour !</a></li>
+
+                        <li><a class="button button-primary" href="{{ path('flickr') }}">Flickr</a></li>
+        </ul>
+    </footer>
+
+    </body>
+</html>
